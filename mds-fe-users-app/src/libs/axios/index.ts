@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { type AxiosInstance, type AxiosRequestConfig } from "axios";
 import { requestInterceptor, responseInterceptor } from "./interceptors";
 
 const createAxios = () => {
@@ -10,4 +10,4 @@ const createAxios = () => {
   return instance;
 };
 
-export { createAxios };
+export { createAxios, type AxiosRequestConfig, type AxiosInstance };
