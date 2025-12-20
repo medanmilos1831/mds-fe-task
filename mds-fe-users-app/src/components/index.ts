@@ -1,0 +1,1 @@
+export { AntModal } from "./AntModal";
