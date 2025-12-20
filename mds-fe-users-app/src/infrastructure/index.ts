@@ -7,6 +7,7 @@ import { createAxios } from "@/libs";
 
 import type { AxiosRequestConfig } from "axios";
 import type { HttpClient } from "@/types";
+import { createModalClient } from "./modalClient";
 
 const createInfrastructure = () => {
   const instance = createAxios();
@@ -16,6 +17,7 @@ const createInfrastructure = () => {
     put: instance.put,
     remove: instance.delete,
   };
+  const modalClient = createModalClient();
   const userRepository = createUserRepository(httpClient);
   const countryRepository = createCountryRepository(httpClient);
   const roleRepository = createRoleRepository(httpClient);
@@ -23,6 +25,7 @@ const createInfrastructure = () => {
     userRepository,
     countryRepository,
     roleRepository,
+    modalClient,
   };
 };
 
