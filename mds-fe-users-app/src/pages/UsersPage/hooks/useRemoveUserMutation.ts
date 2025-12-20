@@ -1,7 +1,7 @@
 import { type IUser } from "@/repositories";
 import { infrastructure } from "@/infrastructure";
 import { useQueryParams } from "@/providers";
-import { MODAL_NAMES, REACT_QUERY_KEYS } from "@/types";
+import { MODAL_NAMES, REACT_QUERY_KEYS, type IErrorClient } from "@/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { notification } from "antd";
 
@@ -20,8 +20,10 @@ const useRemoveUserMutation = () => {
         message: `User ${user.firstName} ${user.lastName} removed successfully`,
       });
     },
-    onError: (error: any) => {
-      console.error(error);
+    onError: (error: IErrorClient) => {
+      notification.error({
+        message: error.message,
+      });
     },
   });
   return {
