@@ -1,7 +1,7 @@
 import { AntModal } from "@/components";
 import type { IUser } from "@/repositories";
 import { MODAL_NAMES } from "@/types";
-import { Filters } from "./components";
+import { Filters, RemoveUser } from "./components";
 import { UsersTable } from "./components/UsersTable";
 
 const UsersPage = () => {
@@ -12,8 +12,7 @@ const UsersPage = () => {
         modalName={MODAL_NAMES.REMOVE_USER}
         initialOpen={false}
         Component={(params) => {
-          console.log(params);
-          return <div>Remove User</div>;
+          return <RemoveUser {...params} />;
         }}
       />
       <div style={{ marginBottom: "1rem" }}>
