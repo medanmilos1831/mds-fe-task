@@ -57,6 +57,19 @@ const REACT_QUERY_KEYS = {
   ROLES: "roles",
 };
 
+const AVATAR_PLACEHOLDER =
+  "https://agcnwo.com/wp-content/uploads/2020/09/avatar-placeholder.png";
+
+const SORT_VALUES = {
+  ASC: "ascend",
+  DESC: "descend",
+} as const;
+
+const SORT_PARAMS_VALUES = {
+  ASC: "asc",
+  DESC: "desc",
+};
+
 export {
   API_URL_ROUTES,
   X_TOTAL_COUNT,
@@ -68,4 +81,7 @@ export {
   SORT_ORDER_MAP,
   MODAL_NAMES,
   REACT_QUERY_KEYS,
+  AVATAR_PLACEHOLDER,
+  SORT_VALUES,
+  SORT_PARAMS_VALUES,
 };

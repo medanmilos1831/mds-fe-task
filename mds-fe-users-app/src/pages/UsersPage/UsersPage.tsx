@@ -20,7 +20,7 @@ const UsersPage = () => {
         <Filters />
       </div>
       <div style={{ marginBottom: "1rem" }}>
-        <UsersTable columns={[]} />
+        <UsersTable />
       </div>
     </>
   );

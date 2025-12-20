@@ -1,15 +1,16 @@
 import { useQuery } from "@tanstack/react-query";
-import type { TableProps } from "antd/es/table";
 
+import { AntTable } from "@/components";
 import { infrastructure } from "@/infrastructure";
 import { useQueryParams } from "@/providers";
 import { REACT_QUERY_KEYS } from "@/types";
-import { Pagination, Row, Col } from "antd";
+import { Col, Pagination, Row } from "antd";
+import { useColumns } from "../hooks";
 import { UserCardList } from "./UserCardList";
-import { AntTable } from "@/components";
 
-const UsersTable = ({ columns }: { columns: TableProps["columns"] }) => {
+const UsersTable = () => {
   const { userRepository } = infrastructure;
+  const columns = useColumns();
   const { setPagination, getSearchParams, setSort } = useQueryParams();
   const params = getSearchParams();
   const { data: response, isLoading } = useQuery({
