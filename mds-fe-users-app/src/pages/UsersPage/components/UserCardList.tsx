@@ -1,4 +1,4 @@
-import { List, Spin, Empty } from "antd";
+import { Empty, Flex, Spin } from "antd";
 
 import { type IUser } from "@/repositories";
 import { UserCard } from "./UserCard";
@@ -22,14 +22,11 @@ const UserCardList = ({ users, loading }: UserCardListProps) => {
   }
 
   return (
-    <List
-      dataSource={users}
-      renderItem={(user) => (
-        <List.Item style={{ padding: 0, border: "none", width: "100%" }}>
-          <UserCard user={user} />
-        </List.Item>
-      )}
-    />
+    <Flex vertical gap={16}>
+      {users.map((user) => (
+        <UserCard key={user.id} user={user} />
+      ))}
+    </Flex>
   );
 };
 
