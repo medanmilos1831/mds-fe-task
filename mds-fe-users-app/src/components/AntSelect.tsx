@@ -15,17 +15,17 @@ function QueryAntSelect<I>({
 }: {
   queryConfig: UndefinedInitialDataOptions<any>;
   selectProps: Omit<SelectProps, "style" | "options" | "loading"> & {
-    parseOpt: (response: I[]) => DefaultOptionType[];
+    parseOptions: (response: I[]) => DefaultOptionType[];
   };
 }) {
   const query = useQuery(queryConfig);
-  const { parseOpt, ...rest } = selectProps;
+  const { parseOptions, ...rest } = selectProps;
   return (
     <AntSelect
       {...rest}
       style={{ width: "100%" }}
       loading={query.isLoading}
-      options={parseOpt(query.data?.result ?? [])}
+      options={parseOptions(query.data?.result ?? [])}
     />
   );
 }
