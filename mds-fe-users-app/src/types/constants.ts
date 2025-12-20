@@ -51,6 +51,12 @@ const MODAL_NAMES = {
   REMOVE_USER: "removeUser",
 };
 
+const REACT_QUERY_KEYS = {
+  USERS: "users",
+  COUNTRIES: "countries",
+  ROLES: "roles",
+};
+
 export {
   API_URL_ROUTES,
   X_TOTAL_COUNT,
@@ -61,4 +67,5 @@ export {
   SERVER_QUERY_PARAMS_MAP,
   SORT_ORDER_MAP,
   MODAL_NAMES,
+  REACT_QUERY_KEYS,
 };
