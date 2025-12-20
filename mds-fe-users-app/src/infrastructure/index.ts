@@ -8,6 +8,7 @@ import { createAxios } from "@/libs";
 import type { AxiosRequestConfig } from "axios";
 import type { HttpClient } from "@/types";
 import { createModalClient } from "./modalClient";
+import { createQueryParamsClient } from "./queryParamsClient";
 
 const createInfrastructure = () => {
   const instance = createAxios();
@@ -26,6 +27,7 @@ const createInfrastructure = () => {
     countryRepository,
     roleRepository,
     modalClient,
+    createQueryParamsClient,
   };
 };
 
