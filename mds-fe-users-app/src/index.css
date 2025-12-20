@@ -4,3 +4,29 @@ body {
   height: 100vh;
   width: 100vw !important;
 }
+
+.mobile-view {
+  display: block;
+}
+
+.desktop-view {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .mobile-view {
+    display: none !important;
+  }
+  .desktop-view {
+    display: block !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .mobile-view {
+    display: block !important;
+  }
+  .desktop-view {
+    display: none !important;
+  }
+}
