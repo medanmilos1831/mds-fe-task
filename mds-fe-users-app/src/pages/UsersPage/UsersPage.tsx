@@ -1,6 +1,8 @@
 import { AntModal } from "@/components";
 import type { IUser } from "@/repositories";
 import { MODAL_NAMES } from "@/types";
+import { Filters } from "./components";
+import { UsersTable } from "./components/UsersTable";
 
 const UsersPage = () => {
   return (
@@ -14,6 +16,12 @@ const UsersPage = () => {
           return <div>Remove User</div>;
         }}
       />
+      <div style={{ marginBottom: "1rem" }}>
+        <Filters />
+      </div>
+      <div style={{ marginBottom: "1rem" }}>
+        <UsersTable columns={[]} />
+      </div>
     </>
   );
 };
