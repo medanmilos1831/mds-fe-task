@@ -1,5 +1,5 @@
 import { Card, Avatar, Button } from "antd";
-import { IUser } from "@/repositories";
+import { type IUser } from "@/repositories";
 import { AVATAR_PLACEHOLDER, MODAL_NAMES } from "@/types";
 import { infrastructure } from "@/infrastructure";
 

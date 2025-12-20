@@ -1,21 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "firstName": "Francisca",
-      "lastName": "Homenick",
-      "email": "erwin_pfeffer@hotmail.com",
-      "avatar": null,
-      "country": {
-        "id": 78,
-        "name": "Cook Islands"
-      },
-      "role": {
-        "id": 4,
-        "name": "UX Designer"
-      }
-    },
-    {
       "id": 2,
       "firstName": "Edwardo",
       "lastName": "Kirlin",

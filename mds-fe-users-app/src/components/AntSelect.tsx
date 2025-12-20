@@ -1,6 +1,9 @@
-import { UndefinedInitialDataOptions, useQuery } from "@tanstack/react-query";
-import { Select, SelectProps } from "antd";
-import { DefaultOptionType } from "antd/es/select";
+import {
+  type UndefinedInitialDataOptions,
+  useQuery,
+} from "@tanstack/react-query";
+import { Select, type SelectProps } from "antd";
+import { type DefaultOptionType } from "antd/es/select";
 
 function AntSelect(props: SelectProps) {
   return <Select {...props} />;
@@ -12,16 +15,17 @@ function QueryAntSelect<I>({
 }: {
   queryConfig: UndefinedInitialDataOptions<any>;
   selectProps: Omit<SelectProps, "style" | "options" | "loading"> & {
-    parseOptions: (response: I[]) => DefaultOptionType[];
+    parseOpt: (response: I[]) => DefaultOptionType[];
   };
 }) {
   const query = useQuery(queryConfig);
+  const { parseOpt, ...rest } = selectProps;
   return (
     <AntSelect
-      {...selectProps}
+      {...rest}
       style={{ width: "100%" }}
       loading={query.isLoading}
-      options={selectProps.parseOptions(query.data?.result ?? [])}
+      options={parseOpt(query.data?.result ?? [])}
     />
   );
 }

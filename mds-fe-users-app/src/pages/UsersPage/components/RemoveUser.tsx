@@ -16,7 +16,9 @@ const RemoveUser = ({ data, closeModal, modalName }: Props) => {
   const { userRepository } = infrastructure;
   const { data: response, isLoading } = useQuery({
     queryKey: [modalName, data.id],
-    queryFn: () => userRepository.getUser(data.id),
+    queryFn: () => {
+      return userRepository.getUser(data.id);
+    },
   });
   return (
     <>
