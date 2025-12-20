@@ -47,6 +47,10 @@ const OBSERVER_SCOPES = {
   MODAL: "modal",
 };
 
+const MODAL_NAMES = {
+  REMOVE_USER: "removeUser",
+};
+
 export {
   API_URL_ROUTES,
   X_TOTAL_COUNT,
@@ -56,4 +60,5 @@ export {
   OBSERVER_SCOPES,
   SERVER_QUERY_PARAMS_MAP,
   SORT_ORDER_MAP,
+  MODAL_NAMES,
 };
