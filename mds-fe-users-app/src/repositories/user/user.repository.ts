@@ -1,6 +1,7 @@
 import {
   API_URL_ROUTES,
   type ApiClientType,
+  type IResponse,
   type IResponseWithPagination,
 } from "@/types";
 import type { IUser } from "./types";
@@ -13,7 +14,7 @@ const createUserRepository = (api: ApiClientType) => {
       });
     },
     getUser: (id: number) => {
-      return api.get<IUser>(`${API_URL_ROUTES.USERS}/${id}`);
+      return api.get<IResponse<IUser>>(`${API_URL_ROUTES.USERS}/${id}`);
     },
     removeUser: (id: number) => {
       return api.remove<void>(`${API_URL_ROUTES.USERS}/${id}`);

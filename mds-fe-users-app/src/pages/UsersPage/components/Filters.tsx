@@ -22,7 +22,7 @@ const Filters = () => {
             placeholder: "Select Role",
             value: getRole(),
             onChange: setRole,
-            parseOptions: (items) => {
+            parseOpt: (items) => {
               return (
                 items.map((role) => ({
                   value: role.name,
@@ -44,7 +44,7 @@ const Filters = () => {
             placeholder: "Select Country",
             value: getCountry(),
             onChange: setCountry,
-            parseOptions: (items) => {
+            parseOpt: (items) => {
               return (
                 items.map((role) => ({
                   value: role.name,
