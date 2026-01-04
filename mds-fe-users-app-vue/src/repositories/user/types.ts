@@ -1,12 +1,19 @@
-import type { ICountry } from "../countries/types";
-import type { IRole } from "../roles/types";
+import type {
+  IResponse,
+  IResponseWithPagination,
+} from "@/types/pagination.types";
 
 export interface IUser {
   avatar: string | null;
-  country: ICountry;
+  country: any;
   email: string;
   firstName: string;
   id: number;
   lastName: string;
-  role: IRole;
+  role: any;
+}
+export interface IUserRepo {
+  getUsers: () => Promise<IResponseWithPagination<IUser>>;
+  getUser: (id: number) => Promise<IResponse<IUser>>;
+  removeUser: (id: number) => Promise<void>;
 }

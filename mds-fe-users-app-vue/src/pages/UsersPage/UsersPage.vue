@@ -1,7 +1,11 @@
 <template>
   <AntModal :modalName="MODAL_NAMES.REMOVE_USER" :initialOpen="false">
-    <template #modalContent="{ data, closeModal }">
-      <RemoveUserModal :data="data" :closeModal="closeModal"></RemoveUserModal>
+    <template #modalContent="{ data, closeModal, modalName }">
+      <RemoveUserModal
+        :data="(data as IUser)"
+        :closeModal="closeModal"
+        :modalName="modalName"
+      ></RemoveUserModal>
     </template>
   </AntModal>
   <AntTable
@@ -35,21 +39,16 @@
 
 <script setup lang="ts">
 import { useQuery } from "@tanstack/vue-query";
-import { h, inject } from "vue";
-import AntTable from "../../components/AntTable.vue";
-import AntModal from "../../components/AntModal.vue";
-import type { RepositoryQueryType } from "../../plugins/apiClient";
-import type { IResponseWithPagination } from "../../types/pagination.types";
-import type { IUser } from "../../repositories";
 import { Button } from "ant-design-vue";
+import { h, inject } from "vue";
+import AntModal from "../../components/AntModal.vue";
+import AntTable from "../../components/AntTable.vue";
+import type { RepositoryQueryType } from "../../plugins/apiClient";
 import type { IModalObserver } from "../../plugins/modalObserver";
+import type { IUser } from "../../repositories";
 import { MODAL_NAMES, REACT_QUERY_KEYS } from "../../types";
 import RemoveUserModal from "./RemoveUserModal.vue";
-interface IUserRepo {
-  getUsers: () => Promise<IResponseWithPagination<IUser>>;
-  getUser: (id: number) => Promise<IUser>;
-  removeUser: (id: number) => Promise<void>;
-}
+import type { IUserRepo } from "@/repositories/user/types";
 const client = inject<RepositoryQueryType>("apiLayerProvider")!;
 const modalObserver = inject<IModalObserver>("modalObserver")!;
 const { data, isLoading } = useQuery({

@@ -3,6 +3,7 @@
     :open="modal.open"
     :onCancel="handleCancel"
     :footer="null"
+    :destroyOnClose="true"
     v-bind="modalProps"
   >
     <slot

@@ -16,6 +16,7 @@ const apiClient = {
     };
     const repository = manager.workspace(httpClient, {
       id: "apiClient",
+      logging: true,
     });
     repository.defineRepository("users", createUserRepository);
     app.provide("apiLayerProvider", manager.query);
