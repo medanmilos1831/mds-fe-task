@@ -13,7 +13,7 @@ export interface IUser {
   role: any;
 }
 export interface IUserRepo {
-  getUsers: () => Promise<IResponseWithPagination<IUser>>;
+  getUsers: (params: any) => Promise<IResponseWithPagination<IUser>>;
   getUser: (id: number) => Promise<IResponse<IUser>>;
   removeUser: (id: number) => Promise<void>;
 }
